@@ -12,11 +12,23 @@ function FestivalCard(){
 
         theme:"好きな味は？",
 
-        team:"チーム 未選択",
+        teams:[
+
+            "チームA",
+
+            "チームB",
+
+            "チームC"
+
+        ],
+
+        myTeam:"未選択",
 
         start:"7/20 09:00",
 
-        end:"7/22 09:00"
+        end:"7/22 09:00",
+
+        result:"結果発表前"
 
     };
 
@@ -44,6 +56,7 @@ function FestivalCard(){
 
 
 
+
             <div className="festival-body">
 
 
@@ -64,14 +77,44 @@ function FestivalCard(){
 
 
 
+
                 <p>
                     参加チーム
                 </p>
 
 
+                <div className="festival-teams">
+
+
+                    {
+
+                        festival.teams.map((team,index)=>(
+
+                            <span key={index}>
+
+                                {team}
+
+                            </span>
+
+                        ))
+
+                    }
+
+
+                </div>
+
+
+
+
+                <p>
+                    自分のチーム
+                </p>
+
+
                 <strong>
-                    {festival.team}
+                    {festival.myTeam}
                 </strong>
+
 
 
 
@@ -93,6 +136,19 @@ function FestivalCard(){
                     {festival.end}
 
                 </strong>
+
+
+
+
+                <p>
+                    結果
+                </p>
+
+
+                <strong>
+                    {festival.result}
+                </strong>
+
 
 
             </div>
